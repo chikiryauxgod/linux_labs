@@ -1,0 +1,26 @@
+#!/bin/sh
+# Lab4.2 - сценарий целевого прекращения процессов
+
+# Проверка, что передано хотя бы одно значение
+if [ "$#" -lt 1 ]; then
+    echo "Incorrect number of parameters, expected at least 1"
+    exit 1
+fi
+
+# Первый параметр — адрес для завершения процессов
+address1="$1"
+
+# Если второй параметр не указан, используется google.com
+address2="${2:-google.com}"
+
+# Завершение всех процессов, связанных с address1
+for p in $(pgrep -f "$address1"); do
+    echo "Завершаем процесс $p, связанный с        echo "Killing process $p linked to $address2"
+        kill "$p" $address1"
+    kill "$p"
+done
+
+for p in $(pgrep -f "$address2"); do
+	echo "Killing process $p linked to $address2"
+	kill "$p"
+done
