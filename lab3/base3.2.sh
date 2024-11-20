@@ -18,7 +18,7 @@ groupadd "$group2"
 adduser "$user1" --ingroup "$group1"
 adduser "$user2"
 adduser "$user3"
-usermod -aG "$group1" "$user2"
+usermod -aG "$group1" "$user2" # -a = append, -G = groups
 usermod -aG "$group2" "$user2"
 usermod -aG "$group2" "$user3"
 
