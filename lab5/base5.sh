@@ -8,7 +8,7 @@ for dir in ~/study/linux_labs/lab*; do
 done
 
 for file in ~/temp_labs/*; do
-    if [ -f "$file" ]; then
+    if [ -f "$file" ]; then  # -f == file ?
         mv "$file" "$(dirname "$file")/Semenov_Lev$(basename "$file")"
     fi
 done
