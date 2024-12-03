@@ -19,7 +19,7 @@ su -l "$user2" -c '
 
     cd /srv/dir2
     touch file_u2d2
-    echo "$(whoami) created file in $(pwd)"
+    whoami && echo "created file in $(pwd)"
 '
 
 su -l "$user1" -c '
@@ -29,7 +29,7 @@ su -l "$user1" -c '
     echo "Result of copying in dir1: $?"
 
     cd /srv/dir2
-    echo "$(whoami) try to create a file in $(pwd)"
+    whoami && echo "try to create a file in $(pwd)"
     cp file_u2d2 file_u1d2
     echo "Result of copying file in dir2: $?"
 '
@@ -37,9 +37,9 @@ su -l "$user1" -c '
 su -l "$user3" -c '
     cd /srv/dir2
     touch file_u3d2
-    echo "$(whoami) created file in $(pwd)"
+    whoami && echo "created file in $(pwd)"
 
     cd /srv/dir1
-    echo "$(whoami) tries to create a file in $(pwd)"
+    whoami && echo "tries to create a file in $(pwd)"
     touch file_u3d1 || echo "Access to create file in dir1 is denied"
 '
