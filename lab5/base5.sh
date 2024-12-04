@@ -8,7 +8,11 @@ for dir in ~/study/linux_labs/lab*; do
 done
 
 for file in ~/temp_labs/*; do
+<<<<<<< HEAD
     if [ -f "$file" ]; then #dirname - path to file, basename - only name
+=======
+    if [ -f "$file" ]; then  # -f == file ?
+>>>>>>> refs/remotes/origin/main
         mv "$file" "$(dirname "$file")/Semenov_Lev$(basename "$file")"
     fi
 done
